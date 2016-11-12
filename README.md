@@ -10,16 +10,19 @@ Features
 
 - ghc, ghcjs, and all haskell libraries are installed safely and
   deterministically via nix
-- both ghc- and ghcjs-targeted code can be build with either cabal or
-  stack, or both
-- ghcjs-targeted code can also be built by ghc, when helpful
+- ghc-targeted code can be built with either cabal or stack
+- ghcjs-targeted code can be built with cabal (but not stack) using ghcjs
+- ghcjs-targeted code can be built with stack, using ghc instead of ghcjs
 - intero is available for use from editors, for both codebases
 
 Usage
 -----
 
 1. install the nix environment
-2. run either`'stack build` or `cabal build` from ghc-code or ghcjs-code
+2. in ghc-code, run either `stack build` or `cabal build`, as normal
+3. in ghcjs-code, to build with stack and ghc just run `stack build`
+4. in ghcjs-code, to build with cabal and ghcjs run `cabal configure --ghcjs && cabal build`
+5. in ghcjs-code, to build with cabal and ghc run `rm -r dist; cabal build`
 
 To install the nix environment, you have two options
 
