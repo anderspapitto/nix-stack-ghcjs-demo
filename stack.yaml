@@ -1,0 +1,10 @@
+resolver: ghc-8.0.1
+
+nix:
+  enable: false
+system-ghc: true
+
+skip-ghc-check: true
+
+packages:
+- '.'
